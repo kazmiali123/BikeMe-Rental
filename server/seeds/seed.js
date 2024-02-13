@@ -3,16 +3,16 @@ const { Bike, User, Contract, Category } = require('../models');
 const { calculateInsuranceQuote } = require('../models/Insurance')
 
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/bikeDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// // Connect to MongoDB
+// mongoose.connect('mongodb+srv://kazmialiMongoDB:J:8bz-^M5cGAVpx@cluster0.7zbv0zf.mongodb.net/?retryWrites=true&w=majority', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
-mongoose.connection.once('connected', async () => {
-  // MongoDB connection is open, start seeding data
-  seedData();
-});
+// mongoose.connection.once('connected', async () => {
+//   // MongoDB connection is open, start seeding data
+//   seedData();
+// });
 
 const seedData = async () => {
   try {
@@ -47,21 +47,12 @@ const seedData = async () => {
   } catch (error) {
     console.error('Error seeding data:', error);
   } finally {
-  
+
     process.exit(0);
   }
 };
 
-// // Function to calculate insurance and rental prices
-// const calculateInsurance = (duration, age, yearsDriving, bikePricePerDay) => {
-//   const insuranceQuotePerDay = calculateInsuranceQuote(age, yearsDriving, bikePricePerDay);
-//   return {
-//     duration,
-//     rentalPriceSub: duration * bikePricePerDay,
-//     rentalPriceTotal: duration * (bikePricePerDay + insuranceQuotePerDay),
-//     insuranceQuotePerDay,
-//   };
-// };
+
 
 // Array of bike data
 const bikesData = [
@@ -207,7 +198,7 @@ const bikesData = [
     category: 'Cruiser',
     bikePricePerDay: 85.00,
     availability: true,
-        images: [{ url: 'https://ultimatemotorcycling.com/wp-content/uploads/2019/09/2020-harley-sportster-iron-883-buyers-guide-1.jpg', description: 'Quarter View' }, { url: 'https://cdn-0.totalmotorcycle.com/wp-content/uploads/2019/08/2020-Harley-Davidson-Iron-883c.jpg', description: 'Side View' }, { url: 'https://www.webbikeworld.com/wp-content/uploads/2020/01/2020-Harley-Davidson-Iron-883-06.jpg', description: 'Dynamic View' }],
+    images: [{ url: 'https://ultimatemotorcycling.com/wp-content/uploads/2019/09/2020-harley-sportster-iron-883-buyers-guide-1.jpg', description: 'Quarter View' }, { url: 'https://cdn-0.totalmotorcycle.com/wp-content/uploads/2019/08/2020-Harley-Davidson-Iron-883c.jpg', description: 'Side View' }, { url: 'https://www.webbikeworld.com/wp-content/uploads/2020/01/2020-Harley-Davidson-Iron-883-06.jpg', description: 'Dynamic View' }],
   },
   {
     make: 'Indian',
@@ -460,34 +451,4 @@ const usersData = [
   },
 ];
 
-// const contractsData = [
-//   {
-//     username: 'john_doe',
-//     bikeName: 'R1250GS',
-//     duration: 5,
-//     rentalPriceSub: '',
-//     rentalPriceTotal: '',
-//   },
-//   {
-//     username: 'jane_smith',
-//     bikeName: 'Monster 821',
-//     duration: 3,
-//     rentalPriceSub: '',
-//     rentalPriceTotal: '',
-//   },
-//   {
-//     username: 'michael_johnson',
-//     bikeName: 'Ninja ZX-10R',
-//     duration: 3,
-//     rentalPriceSub: '',
-//     rentalPriceTotal: '',
-//   },
-// ];
-
-// const categoriesData = [
-//   { name: 'Sport' },
-//   { name: 'Cruiser' },
-//   { name: 'Adventure' },
-//   { name: 'Retro' },
-//   { name: 'Touring' }
-// ];
+seedData();
