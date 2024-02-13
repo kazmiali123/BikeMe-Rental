@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Bike, User, Contract, Category } = require('../models');
+const { Bike, User, Contract, Insurance } = require('../models');
 const { calculateInsuranceQuote } = require('../models/Insurance')
 
 
@@ -18,7 +18,7 @@ mongoose.connection.once('connected', async () => {
 const seedData = async () => {
   try {
     // Remove existing data
-    await Promise.all([User.deleteMany(), Bike.deleteMany(), Contract.deleteMany()]);
+    await Promise.all([User.deleteMany(), Bike.deleteMany(), Contract.deleteMany(), Insurance.deleteMany()]);
 
     // Insert new bikes
     const insertedBikes = await Bike.insertMany(bikesData);
