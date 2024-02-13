@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
 const { Bike, User, Contract, Insurance } = require('../models');
 const { calculateInsuranceQuote } = require('../models/Insurance')
+const mongoose = require('mongoose');
 
 
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/bikeDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -23,22 +23,6 @@ const seedData = async () => {
     // Insert new bikes
     const insertedBikes = await Bike.insertMany(bikesData);
 
-    // categoriesData.forEach((c) => {
-    //   console.log(c)
-    //   let filteredBikes = insertedBikes.map((b) => {
-    //     let bikeIds = []
-    //     if (b.category == c.name) {
-    //       return b._id
-    //     }
-    //   }
-    //   )
-    //   let filteredCategoryBike = filteredBikes.filter((b) =>
-    //     b
-    //   )
-    //   console.log(filteredCategoryBike)
-    //   if (filteredCategoryBike.length > 0)
-    //     Category.create({ name: c.name, bikes: filteredCategoryBike })
-    // })
 
     // Insert new users
     const insertedUsers = await User.insertMany(usersData);
@@ -416,8 +400,6 @@ const bikesData = [
 ];
 
 module.exports = bikesData;
-
-
 
 
 

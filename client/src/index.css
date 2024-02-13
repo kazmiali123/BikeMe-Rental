@@ -6,13 +6,10 @@
 }*/
 
 html {
-  scroll-padding-top: 100px; /* height of sticky header */
+  scroll-padding-top: 100px; 
 }
 
-.logo {
-  /* color:gold;
-  background-color: gold; */
-}
+
 .iconSVG:hover {
   fill: gold;
 }
@@ -43,6 +40,7 @@ html {
   min-height: 50em;  
   margin-bottom: 0px;  
   background: #f8f9fa
+  
 }
 
 .AboutMeBox {

@@ -63,7 +63,7 @@ export default function ContractPage() {
         <Container >
             <div className="myOutlet">
                 <div className="purchaseCard">
-                    <Container fluid>
+                    <Container fluid className="purchaseContainer">
                         {!shoppingCart ? (
                             <div>... Loading</div>
                         ) : (
