@@ -5,7 +5,7 @@ const { calculateInsuranceQuote } = require('../models/Insurance')
 
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://kazmialiMongoDB:J%3A8bz-%5EM5cGAVpx@cluster0.7zbv0zf.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://<kazmialiMongoDB>:<J:8bz-^M5cGAVpx>@cluster0.7zbv0zf.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
