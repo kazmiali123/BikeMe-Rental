@@ -9,7 +9,7 @@
 .purchaseCard{
     font-family: sans-serif;
     margin-top: 20px;
-    margin: auto;
+    margin:auto;
     width: 700px;
     height: 850px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -18,7 +18,6 @@
     align-items: center; 
 }
 
-
 .buttonGroup{
     display: block;
     text-align: center;
@@ -26,17 +25,12 @@
 }
 
 #checkoutBtn{
-  background: rgb(2,0,36);
-  /* background: radial-gradient(circle, rgba(209,186,18,1) 20%,  rgba(2,0,36,1)75%); */
+  background: rgb(2,0,36); 
   border-radius: 8px ;  
   transition-property: background;
   transition-duration: 2s;
 }
 
 #checkoutBtn:hover{
-  /* background: rgb(2,0,36); */
-  /* background: radial-gradient(circle, rgba(2,0,36,1) 20%, rgba(209,186,18,1) 75%); */
-  background: radial-gradient(circle, rgba(209,186,18,1) 20%,  rgba(2,0,36,1)75%);
-  
- 
+  background: radial-gradient(circle, rgba(209,186,18,1) 20%,  rgba(2,0,36,1)75%);  
 }

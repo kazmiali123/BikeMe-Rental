@@ -1,11 +1,12 @@
+const mongoose = require('mongoose');
 const { Bike, User, Contract, Insurance } = require('../models');
 const { calculateInsuranceQuote } = require('../models/Insurance')
-const mongoose = require('mongoose');
-
 
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/bikeDB', {
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://MERNSearch:bEwdIHNJp95SAX2m@cluster0.wkoffnc.mongodb.net/bikeDB?retryWrites=true&w=majority', {
+
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -36,7 +37,6 @@ const seedData = async () => {
     process.exit(0);
   }
 };
-
 
 
 // Array of bike data
@@ -402,8 +402,6 @@ const bikesData = [
 module.exports = bikesData;
 
 
-
-
 const usersData = [
   {
     username: 'john_doe',
@@ -433,4 +431,3 @@ const usersData = [
     age: 27,
   },
 ];
-
